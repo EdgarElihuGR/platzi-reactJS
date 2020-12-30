@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #263238;
+    color: #3577AE;
+    font-size: 16px;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn {
+    padding: .5rem 2rem;
+}
+
+.btn-orange {
+    background-color: #EB7653;
+}
