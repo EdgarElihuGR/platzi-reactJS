@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { useCallback } = require('react')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     entry: './src/index.js',
@@ -27,8 +28,14 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                test: /\.(s*)css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    "css-loader",
+                    "sass-loader" 
+                ],
             },
         ]
     },
@@ -36,6 +43,9 @@ module.exports = {
         new HtmlWebPackPlugin ({
             template: './public/index.html',
             filename: './index.html'
+        }),
+        new MiniCssExtractPlugin ({
+            filename: 'assets/[name].css'
         })
     ]
 }
