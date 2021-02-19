@@ -1,30 +1,28 @@
+@import "./Vars.scss";
+@import "./Media.scss";
+
 body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #F9F3EF;
-    color: #88857E;
-    font-size: 16px;
+    font-family: $theme-font;
+    background: $main-color;
 }
-
+  
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
 }
 
-#app > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+::-webkit-scrollbar {
+    display: none;
 }
 
-.btn {
-    padding: .5rem 2rem;
-    width: 80%;
-    border-radius: 8px;
-    border-color: transparent;
-    color: #fff;
-}
+// .btn {
+//     padding: .5rem 2rem;
+//     width: 80%;
+//     border-radius: 8px;
+//     border-color: transparent;
+//     color: #fff;
+// }
 
-.btn-orange {
-    background-color: #FF7F41;
-}
+// .btn-orange {
+//     background-color: #FF7F41;
+// }
