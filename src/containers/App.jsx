@@ -13,6 +13,12 @@ const API = 'http://localhost:3000/initalState';
 
 const App = () => {
   const initialState = useInitialState(API);
+  const [myList, setMyList] = useState(initialState.myList);
+
+  const handleClick = (id) => {
+    console.log(`ID de item: ${id}`);
+  }
+
   return (
     <div className="App">
         <Header/>
@@ -31,7 +37,7 @@ const App = () => {
         <Categories title="Tendencias">
             <Carousel>
                 {initialState.trends?.map(item => 
-                  <CarouselItem key={item.id} {...item} />
+                  <CarouselItem key={item.id} onClick={handleClick} {...item} />
                 )}
             </Carousel>
         </Categories>
@@ -39,7 +45,7 @@ const App = () => {
         <Categories title="Originales Platzi Video">
             <Carousel>
               {initialState.originals?.map(item => 
-                <CarouselItem key={item.id} {...item}/>
+                <CarouselItem key={item.id} onClick={handleClick} {...item}/>
               )}
             </Carousel>
         </Categories>
